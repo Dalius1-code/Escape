@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Door
   - Key1
+  - End
   layers:
   - Default
   - TransparentFX

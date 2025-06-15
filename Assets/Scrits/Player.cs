@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -103,5 +104,21 @@ public class Player : MonoBehaviour
         ry = (Mathf.Abs(_smoothValZ) < dead) ? 0f : _smoothValZ;
 
         return new Vector2(rX, ry);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("End"))
+        {
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadSceneAsync(nextSceneIndex);
+            }
+            else
+            {
+                Debug.LogWarning("No more scenes to load. You're at the last scene.");
+            }
+        }
     }
 }
