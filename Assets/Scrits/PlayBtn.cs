@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayBtn : MonoBehaviour
 {
-    public string sceneToLoad = "GameScene"; // Set this to the name of your game scene
+    public string sceneToLoad = "GameScene"; 
 
     public void PlayGame()
     {
