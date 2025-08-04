@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
     }
 
 
+
     public Vector2 SmoothedInput()
     {
         float dead = 0.001f;
